@@ -453,17 +453,7 @@ class SortableGrid extends Component {
 
   _animateGridHeight = () => {
     this.gridHeightTarget = this.rows * this.state.blockHeight
-    if (this.gridHeightTarget === this.state.gridLayout.height || this.state.gridLayout.height === 0)
-      this.state.gridHeight.setValue(this.gridHeightTarget)
-    else if (this.state.gridHeight._value !== this.gridHeightTarget) {
-      Animated.timing(
-        this.state.gridHeight,
-        {
-          toValue: this.gridHeightTarget,
-          duration: this.blockTransitionDuration
-        }
-      ).start()
-    }
+    this.state.gridHeight.setValue(this.gridHeightTarget)
   }
 
   _getDistanceTo = (point) => {
