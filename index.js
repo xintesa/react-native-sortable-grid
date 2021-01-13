@@ -24,7 +24,7 @@ class Block extends Component {
     <Animated.View
       style = { this.props.style }
       onLayout = { this.props.onLayout }
-      useNativeDriver = { true }
+      useNativeDriver = { false }
       {...this.props.panHandlers}
     >
       <TouchableWithoutFeedback
@@ -51,7 +51,7 @@ class SortableGrid extends Component {
       <Animated.View
         style={ this._getGridStyle() }
         onLayout={this.assessGridSize}
-        useNativeDriver={true}
+        useNativeDriver={false}
       >
         { this.state.gridLayout &&
           this.items.map( (item, key) =>
@@ -201,7 +201,7 @@ class SortableGrid extends Component {
           {
             toValue: this._getActiveBlock().origin,
             duration: this.blockTransitionDuration,
-            useNativeDriver: true,
+            useNativeDriver: false,
           }
         ).start()
 
@@ -256,7 +256,7 @@ class SortableGrid extends Component {
       {
         toValue: position,
         duration: this.blockTransitionDuration,
-        useNativeDriver: true,
+        useNativeDriver: false,
       }
     ).start()
   }
@@ -269,7 +269,7 @@ class SortableGrid extends Component {
       {
         toValue: this._getActiveBlock().origin,
         duration: this.activeBlockCenteringDuration,
-        useNativeDriver: true,
+        useNativeDriver: false,
       }
     ).start()
   }
