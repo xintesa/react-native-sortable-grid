@@ -245,7 +245,7 @@ class SortableGrid extends Component {
     return new Promise( (resolve, reject) => {
       Animated.timing(
         this.state.deleteBlockOpacity,
-        { toValue: 0, duration: 2 * this.activeBlockCenteringDuration, useNativeDriver: true }
+        { toValue: 0, duration: 2 * this.activeBlockCenteringDuration, useNativeDriver: false }
       ).start(resolve)
     })
   }
@@ -474,7 +474,7 @@ class SortableGrid extends Component {
         velocity: 2000,
         tension: 2000,
         friction: 5,
-        useNativeDriver: true,
+        useNativeDriver: false,
       }).start()
     }
   }
